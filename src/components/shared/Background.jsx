@@ -1,9 +1,8 @@
-import './style/background.css'
+import "./style/background.css";
 
 const Background = () => {
   return (
     <div>
-      Background
       <ul className="background">
         <li></li>
         <li></li>

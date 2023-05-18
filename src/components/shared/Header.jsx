@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+import "./style/header.css";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -10,6 +11,7 @@ const Header = () => {
   return (
     <header className="header__container">
       <h1 className="header__logo">
+        <i className="bx bxs-shopping-bags header__icon"></i>
         <Link to="/" className="header__title">
           E-COMMERCE
         </Link>
@@ -18,27 +20,27 @@ const Header = () => {
         <ul className="header__list">
           <li className="header__items">
             <Link to="/login">
-              <i className="bx bx-user"></i>
-            </Link>
-          </li>
-          <li className="header__items">
-            <Link to="/register">
-              <i className="bx bx-user-plus"></i>
+              <i className="bx bx-user header__icon"></i>
             </Link>
           </li>
           <li className="header__items">
             <Link to="/purchases">
-              <i className="bx bx-shopping-bag"></i>
+              <i className="bx bx-shopping-bag header__icon"></i>
             </Link>
           </li>
           <li className="header__items ">
             <Link to="/cart">
-              <i className="bx bx-cart"></i>
+              <i className="bx bx-cart header__icon"></i>
+            </Link>
+          </li>
+          <li className="header__items">
+            <Link to="/register">
+              <i className="bx bx-user-plus header__icon"></i>
             </Link>
           </li>
           <li className="header__items">
             <i
-              className="bx bx-log-out header__log-out"
+              className="bx bx-log-out header__log-out header__icon"
               onClick={() => logout()}
             ></i>
           </li>

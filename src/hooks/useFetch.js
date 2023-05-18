@@ -5,13 +5,13 @@ const useFetch = url => {
 
     const [apiInfo, setApiInfo] = useState()
 
-    const getProductById = () => {
-        axios.get(url)
+    const getApi = () => {
+        axios
+            .get(url)
             .then(res => setApiInfo(res.data))
             .catch(err => console.error(err))
     }
-    return [apiInfo, getProductById]
-
+    return [apiInfo, getApi]
 }
 
 export default useFetch

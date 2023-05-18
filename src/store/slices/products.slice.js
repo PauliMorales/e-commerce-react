@@ -15,9 +15,9 @@ export const { setProductsGlobal } = productsSlice.actions
 
 export default productsSlice.reducer
 
-export const getAllProductsThunk = () => dispatch => {
-    const url = 'https://e-commerce-api-v2.academlo.tech/api/v1/products'
-    axios.get(url)
+export const getAllProductsThunk = (url = 'https://e-commerce-api-v2.academlo.tech/api/v1/products') => (dispatch) => {
+    axios
+    .get(url)
     .then(res => dispatch(setProductsGlobal(res.data)))
     .catch(err => console.error(err))
 }

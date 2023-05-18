@@ -1,16 +1,23 @@
 import { useNavigate } from "react-router-dom";
 import "./styles/cardproducts.css";
+import useCrudCart from "../../hooks/useCrudCart";
 
 const CardProduct = ({ product }) => {
   const navigate = useNavigate();
+  const { addProductToCart } = useCrudCart();
 
   const handleSelecProduct = () => {
     navigate(`/product/${product.id}`);
   };
 
-  const handleBtnClick = e => {
-    e.stopPropagation()
-  }
+  const handleBtnClick = async (e) => {
+    e.stopPropagation();
+    const data = {
+      quantity: 1,
+      productId: product?.id,
+    };
+    addProductToCart(data);
+  };
 
   return (
     <article className="product" onClick={handleSelecProduct}>

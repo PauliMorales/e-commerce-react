@@ -45,17 +45,17 @@ const ProductIdInfo = ({ product }) => {
             <span className="productId__quantity-title"  >Quantity</span>
             <div className="productId__quantity-btn">
               <button className="productId__btn" onClick={handleMinus}>
-                <i className="bx bxs-minus-circle"></i>
+                <i className="productId__icon bx bxs-minus-circle"></i>
               </button>
               <div>{quantity}</div>
               <button className="productId__btn" onClick={handlePlus}>
-                <i className="bx bxs-plus-circle"></i>
+                <i className="productId__icon bx bxs-plus-circle"></i>
               </button>
             </div>
           </div>
         </div>
         <div>
-          <button onClick={handleToCart}>
+          <button className="productId__btn-add" onClick={handleToCart}>
             {" "}
             Add to cart <i className="bx bx-cart-alt"></i>
           </button>

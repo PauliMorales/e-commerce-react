@@ -72,7 +72,7 @@ const Login = () => {
             <button className="login__btn">Sign in</button>
           </form>
           <h3 className="login__linkRegister">
-            Don´t havean account?<Link to={"/register"}>Sing up</Link>
+            Don´t havean account? <Link to={"/register"}>Sing up</Link>
           </h3>
           <Modal showModal={showModal} onClose={closeModal}>
             <h3> Hello! welcome</h3>

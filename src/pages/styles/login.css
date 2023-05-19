@@ -1,5 +1,5 @@
 .login__container{
-    margin: 2rem auto;
+    margin: 5rem auto;
     background-color: whitesmoke;
     padding: 2rem;
     max-width: 300px;
@@ -8,6 +8,7 @@
 .login__greeting{
     text-align: center;
     font-size: 22px;
+    color: var(--dark-color);
 }
 .login__form{
     display: flex;
@@ -28,7 +29,8 @@
     padding: 0.5em;
     margin-top: 1.5rem;
     color: white;
-    background-color: #f85555;
+    background-color: var(--dark-color);
+    border-radius: 8px;
 }
 .login__linkRegister{
     font-size: 12px;

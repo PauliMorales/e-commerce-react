@@ -1,0 +1,9 @@
+.similarProduct__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.similarProduct__title{
+    color: var(--dark-color);
+    padding: 0.5rem;
+}

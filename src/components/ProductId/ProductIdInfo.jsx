@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useCrudCart from "../../hooks/useCrudCart";
+import './style/productIdInfo.css'
 
 const ProductIdInfo = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
@@ -21,27 +22,33 @@ const ProductIdInfo = ({ product }) => {
     addProductToCart(data);
   };
 
+  useEffect(() => {
+    if (window) {
+      window.scrollTo(0, 0);
+    }
+  }, []);
+
   return (
-    <section>
-      <div>
-        <h3>{product?.brand}</h3>
-        <h2>{product?.title}</h2>
-        <p>{product?.description}</p>
+    <section className="productId__container">
+      <div className="productId__content">
+        <h3 className="productId__brand">{product?.brand}</h3>
+        <h2 className="productId__title">{product?.title}</h2>
+        <p className="productId__description">{product?.description}</p>
       </div>
-      <footer>
-        <div>
-          <div>
-            <span>Price</span>
-            <span>{product?.price}</span>
+      <footer className="productId__footer">
+        <div className="productId__footer-price">
+          <div className="productId__footer-container">
+            <span className="productId__price">Price</span>
+            <span className="productId__value">{product?.price}</span>
           </div>
-          <div>
-            <span>Quantity</span>
-            <div>
-              <button onClick={handleMinus}>
+          <div className="productId__quantity">
+            <span className="productId__quantity-title"  >Quantity</span>
+            <div className="productId__quantity-btn">
+              <button className="productId__btn" onClick={handleMinus}>
                 <i className="bx bxs-minus-circle"></i>
               </button>
               <div>{quantity}</div>
-              <button onClick={handlePlus}>
+              <button className="productId__btn" onClick={handlePlus}>
                 <i className="bx bxs-plus-circle"></i>
               </button>
             </div>

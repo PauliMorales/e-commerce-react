@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import { getAllProductsThunk } from "../../store/slices/products.slice";
 import { useDispatch } from "react-redux";
+import './styles/filterCategory.css'
 
 const FilterCategory = () => {
   const dispatch = useDispatch();

@@ -1,0 +1,16 @@
+.category{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+    margin-left: 1.05rem;
+    cursor: pointer;
+    align-content: flex-end;
+    align-items: flex-start;
+}
+.selector_category{
+    display: flex;
+}
+.category__list{
+    font-size: 1.2rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}

@@ -1,17 +1,18 @@
 .product{
     width: 100%;
     max-width: 320px;
-    border: 1px solid #6C3483  ;
+    border: 2px solid var(--dark-color)  ;
     background-color: white;
     transition: transform 200ms ease;
     cursor: pointer;
     border-radius: 0.8em;
+    min-width: 250px;
 }
 .product:hover{
     transform: scale(1.03);
 }
 .product__header{
-   border-bottom: 1px solid #6C3483  ; 
+   border-bottom: 2px solid var(--dark-color)  ; 
    padding: 1.5rem;
    width: 100%;
    aspect-ratio: 1.5;
@@ -58,14 +59,15 @@
 .product__price{
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 }
 .product__price-label{
-    color: #6C3483  ;
+    color: var(--dark-color) ;
     font-size: 0.9rem;
 }
 .product__btn{
     color: white;
-    background-color: var(--main-color);
+    background-color: var(--dark-color);
     width: 40px;
     aspect-ratio: 1;
     border-radius: 50%;

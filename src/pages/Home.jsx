@@ -3,6 +3,7 @@ import CardProduct from "../components/Home/CardProduct";
 import { useRef, useState } from "react";
 import FilterCategory from "../components/Home/FilterCategory";
 import FilterPrice from "../components/Home/FilterPrice";
+import './styles/homeProducts.css'
 
 
 const Home = () => {
@@ -76,13 +77,13 @@ const Home = () => {
             </button>
           </div>
           <i
-            className="mobile_filter bx bx-filter-alt"
+            className="home__mobile_filter bx bx-filter-alt"
             onClick={() => toggleMenu()}
           >
-            Filter
+            <span className="home__mobile_filter">Filter</span>   
           </i>
         </div>
-        <div className="home_product-grid">
+        <div className="home_product">
           {productFilter?.map((prod) => (
             <CardProduct key={prod.id} product={prod} />
           ))}

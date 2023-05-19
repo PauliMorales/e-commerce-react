@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import useFetch from "../../hooks/useFetch";
 import CardProduct from "../Home/CardProduct";
-import "../Home/styles/similarproducts.css";
+import './style/similarproducts.css'
 
 const SimilarProduct = ({ product }) => {
   const url = `https://e-commerce-api-v2.academlo.tech/api/v1/products?categoryId=${product?.categoryId}`;

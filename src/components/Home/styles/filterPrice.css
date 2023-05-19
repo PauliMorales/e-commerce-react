@@ -2,23 +2,29 @@
     display: flex;
     flex-direction: column;
 }
-.price_container-first{
+
+.price_container-first {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
-.selector__filter{
+
+.price__filter {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
-    align-content: stretch;
-    flex-wrap: wrap;
-    margin: 1em;
+    margin-top: 0.5rem;
+    color: var(--dark-color);
 }
 
 .price_title {
     text-align: center;
+    margin: 0;
+}
+
+.price_line {
+    border-style: inset;
+    border-width: 1px;
+    width: 100%;
+    margin-top: 0.5rem 0;
 }
 
 .price_form {
@@ -29,10 +35,13 @@
 }
 
 .price_input {
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
     width: 175px;
     height: 25px;
 }
-.price_item{
+
+.price_item {
     display: flex;
     flex-direction: column;
 }
@@ -44,5 +53,7 @@
     margin-top: 1em;
     width: 180px;
     height: 25px;
-    background-color: #f85555;
+    background-color: var(--dark-color);
+    color: white;
+    border-radius: 5px;
 }

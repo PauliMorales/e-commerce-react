@@ -22,7 +22,7 @@ const FilterPrice = ({ setFromTo }) => {
   return (
     <article className="price__container">
       <div className="price">
-        <div onClick={changeFilterShow} className="selector__filter">
+        <div onClick={changeFilterShow} className="price__filter">
           <h3 className="price_title">Price</h3>
           <i
             className={`btn-category-down bx ${
@@ -30,6 +30,7 @@ const FilterPrice = ({ setFromTo }) => {
             }`}
           ></i>
         </div>
+        <hr className="price_line" />
       </div>
       <article className="price_container-first">
         {filterShow && (

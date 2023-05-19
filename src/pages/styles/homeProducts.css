@@ -38,7 +38,7 @@
     border-bottom-right-radius: 0.5em;
 }
 
-.home__mobile_filter{
+.home__mobile_filter {
     font-size: 20px;
     margin: 0.5rem;
     display: flex;
@@ -50,7 +50,7 @@
     font-family: 'Raleway', sans-serif;
 }
 
-.home_product{
+.home_product {
     padding: 3rem;
     display: flex;
     max-width: 1024px;
@@ -74,7 +74,8 @@
     right: 0;
     background-color: white;
     padding: 1rem;
-    z-index: 10;
+    z-index: 30;
+    border-radius: 5px 0 0 5px;
 }
 
 .filter-close-icon {

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import { getAllProductsThunk } from "../../store/slices/products.slice";
 import { useDispatch } from "react-redux";
-import './styles/filterCategory.css'
+import "./styles/filterCategory.css";
 
 const FilterCategory = () => {
   const dispatch = useDispatch();
@@ -31,7 +31,7 @@ const FilterCategory = () => {
 
   return (
     <article className="category">
-      <div onClick={changeShowCategory} className="selector_category">
+      <div onClick={changeShowCategory} className="category_filter">
         <h3 className="category_title">Category</h3>
         <i
           className={`btn-category-down bx ${
@@ -39,22 +39,26 @@ const FilterCategory = () => {
           }`}
         ></i>
       </div>
-      { categoryIsShow && (
-      <ul className="category__list">
-        <li className="li__product-all" onClick={handleClickAllProducts}>All Products</li>
-        {categories?.map((category) => (
-          <li
-            className="li__product-all"
-            onClick={() => handleClickCategories(category.id)}
-            key={category.id}
-          >
-            {category.name}
+      <hr className="category_line" />
+
+      {categoryIsShow && (
+        <ul className="category__list">
+          <li className="category__item-Products" onClick={handleClickAllProducts}>
+            All Products
           </li>
-        ))}
-      </ul>
+          {categories?.map((category) => (
+            <li
+              className="category__item-Products"
+              onClick={() => handleClickCategories(category.id)}
+              key={category.id}
+            >
+              {category.name}
+            </li>
+          ))}
+        </ul>
       )}
     </article>
-  )
-}
+  );
+};
 
-export default FilterCategory
+export default FilterCategory;

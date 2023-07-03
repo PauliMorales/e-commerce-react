@@ -5,6 +5,8 @@
     position: relative;
     overflow: hidden;
     margin-top: 2rem;
+    flex-grow: 2;
+    flex-basis: 0;
 }
 
 .slider__arrowhead {

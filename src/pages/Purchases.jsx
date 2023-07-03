@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import usePurchases from "../hooks/usePurchases";
 import ProductPurchases from "../components/Purchases/ProductPurchases";
+import "../components/Purchases/productPurchases.css";
 
 const Purchases = () => {
   const { purchases, getAllProductsPurchased } = usePurchases();
@@ -9,14 +10,17 @@ const Purchases = () => {
     getAllProductsPurchased();
   }, []);
 
+  console.log(purchases);
+
   return (
-    <div>
+    <div className="purchases__title">
       <h2>My Purchases</h2>
       <div>
-        {purchases?.map(prodPurchase => (
-          <ProductPurchases 
-          key={prodPurchase.id} 
-          purchases={prodPurchase} />
+        {purchases?.map((prodPurchases) => (
+          <ProductPurchases
+            key={prodPurchases.id}
+            prodPurchases={prodPurchases}
+          />
         ))}
       </div>
     </div>

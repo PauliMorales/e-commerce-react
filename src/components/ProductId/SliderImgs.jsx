@@ -1,6 +1,5 @@
-import { useState } from 'react';
-import './style/sliderImgs.css'
-
+import { useState } from "react";
+import "./style/sliderImgs.css";
 
 const SliderImgs = ({ product }) => {
   const [numberImg, setNumberImg] = useState(0);
@@ -54,7 +53,7 @@ const SliderImgs = ({ product }) => {
               className="slider__img2"
               src={imgInfo.url}
               alt=""
-              onClick={() => setNumberImg(i + 1)}
+              onClick={() => setNumberImg(i)}
             />
           </li>
         ))}

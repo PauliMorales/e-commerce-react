@@ -1,13 +1,24 @@
+/* eslint-disable react/prop-types */
+import "./productPurchases.css";
 
-
-const ProductPurchases = ({ prodPurchase }) => {
+const ProductPurchases = ({ prodPurchases }) => {
+  console.log(prodPurchases);
   return (
-    <article>
-      <h2 className="prodpurchases__title" >Purchases</h2>
-      <img className="prodpurchases__img f-grow" src={prodPurchases?.product.images[0].url} alt="" />
-      <h3 className="prodpurchases__prod f-grow">{prodPurchases.product.title}</h3>
-      <span className="prodpurchases__unid f-grow">{prodPurchases.quantity}</span>
-      <span className="prodpurchases__price f-grow">${prodPurchases.quantity * prodPurchases.product.price}</span>
+    <article className="prodpurchases__container ">
+      <img
+        className="prodpurchases__img f-grow"
+        src={prodPurchases?.product.images[0].url}
+        alt=""
+      />
+      <h3 className="prodpurchases__prod f-grow">
+        {prodPurchases?.product.title}
+      </h3>
+      <span className="prodpurchases__unid f-grow">
+        {prodPurchases?.quantity}
+      </span>
+      <span className="prodpurchases__price f-grow">
+        ${prodPurchases?.quantity * Number(prodPurchases?.product.price)}
+      </span>
     </article>
   );
 };

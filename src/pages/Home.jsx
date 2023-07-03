@@ -3,8 +3,7 @@ import CardProduct from "../components/Home/CardProduct";
 import { useRef, useState } from "react";
 import FilterCategory from "../components/Home/FilterCategory";
 import FilterPrice from "../components/Home/FilterPrice";
-import './styles/homeProducts.css'
-
+import "./styles/homeProducts.css";
 
 const Home = () => {
   const [imputValue, setimputValue] = useState("");
@@ -12,7 +11,7 @@ const Home = () => {
 
   const { productsGlobal } = useSelector((state) => state);
 
-  const [fromTo, setfromTo] = useState({
+  const [fromTo, setFromTo] = useState({
     from: 0,
     to: Infinity,
   });
@@ -27,7 +26,7 @@ const Home = () => {
     ?.filter((prod) => prod.title.toLowerCase().includes(imputValue))
     .filter((prod) => {
       const from = +fromTo.from;
-      const to = +from.to;
+      const to = +fromTo.to;
       const price = +prod.price;
       if (from && to) {
         return from <= price && price <= to;
@@ -58,8 +57,8 @@ const Home = () => {
           className="bx bx-x filter-close-icon"
           onClick={() => toggleMenu()}
         ></i>
-        <FilterCategory />
-        <FilterPrice setfromTo={setfromTo} />
+        <FilterCategory setFromTo={setFromTo} />
+        <FilterPrice setFromTo={setFromTo} />
       </div>
 
       <div className="home_container">
@@ -80,7 +79,7 @@ const Home = () => {
             className="home__mobile_filter bx bx-filter-alt"
             onClick={() => toggleMenu()}
           >
-            <span className="home__mobile_filter">Filter</span>   
+            <span className="home__mobile_filter">Filter</span>
           </i>
         </div>
         <div className="home_product">

@@ -7,3 +7,10 @@
     color: var(--dark-color);
     padding: 0.5rem;
 }
+
+.similarProduct__products{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

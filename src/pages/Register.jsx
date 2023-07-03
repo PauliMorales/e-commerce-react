@@ -4,7 +4,8 @@ import useAuthentication from "../hooks/useAuthentication";
 import defaulRegisterValues from "../utils/deafultRegisterValues";
 import Loading from "../components/shared/Loading";
 import Modal from "../components/shared/Modal";
-import './styles/register.css'
+import "./styles/register.css";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -96,9 +97,13 @@ const Register = () => {
               />
             </div>
             <button className="register__btn">Register</button>
+            <h3 className="register__gologin">
+              Now
+              <Link to={"/Login"}> login</Link>
+            </h3>
           </form>
           <Modal showModal={showModal} onClose={closeModal}>
-            <h3>{error ? "User already exists" : "Hello! welcome"}</h3>
+            <h3>{error ? "User already exists" : "Hello! Welcome"}</h3>
             <button className="register__btn-modal" onClick={closeModal}>
               Ok
             </button>

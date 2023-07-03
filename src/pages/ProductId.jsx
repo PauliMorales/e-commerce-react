@@ -4,12 +4,13 @@ import useFetch from "../hooks/useFetch";
 import ProductIdInfo from "../components/ProductId/ProductIdInfo";
 import SliderImgs from "../components/ProductId/SliderImgs";
 import SimilarProduct from "../components/ProductId/SimilarProduct";
+import "./styles/homeProducts.css"
 
 const ProductId = () => {
   
   const { id } = useParams();
 
-  const url = `https://e-commerce-api-v2.academlo.tech/api/v1/products/${id}`;
+  const url = `${import.meta.env.VITE_API_URL}products/${id}`;
   const [product, getProductById] = useFetch(url);
 
   useEffect(() => {
@@ -18,7 +19,7 @@ const ProductId = () => {
 
   return (
     <div>
-      <div>
+      <div className="product-slider-info" >
         <SliderImgs product={product} />
         <ProductIdInfo product={product} />
       </div>

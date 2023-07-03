@@ -1,12 +1,11 @@
-import './style/loading.css'
+import "./style/loading.css";
 
 const Loading = () => {
   return (
-    <div>
-      Loading
+    <div className="loading">
       <div className="preloader">
         <svg
-          className="cart"
+          className="cart__loading"
           role="img"
           aria-label="Shopping cart line animation"
           viewBox="0 0 128 128"
@@ -57,9 +56,7 @@ const Loading = () => {
         </svg>
         <div className="preloader__text">
           <p className="preloader__msg">Bringing you the goods…</p>
-          <p className="preloader__msg preloader__msg--last">
-            Loading...
-          </p>
+          <p className="preloader__msg preloader__msg--last">Loading...</p>
         </div>
       </div>
     </div>

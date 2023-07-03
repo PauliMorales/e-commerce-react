@@ -1,0 +1,28 @@
+.cart {
+  text-align: center;
+}
+.cart__title {
+  margin-bottom: 1.2rem;
+  margin-top: 5rem;
+}
+
+.cart__footer {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  width: 100%;
+  max-width: 25em;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 1rem;
+}
+.cart__btn {
+  width: 100%;
+  font-size: 18px;
+  padding: 0.6em;
+  text-align: center;
+  background-color: var(--dark-color);
+  color: white;
+  border-radius: 0.5em;
+  grid-column: span 2;
+  margin: 2rem;
+}

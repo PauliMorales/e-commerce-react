@@ -4,24 +4,33 @@ import { getAllProductsThunk } from "../../store/slices/products.slice";
 import { useDispatch } from "react-redux";
 import "./styles/filterCategory.css";
 
-const FilterCategory = () => {
+const FilterCategory = ({ setFromTo }) => {
   const dispatch = useDispatch();
 
-  const url = "https://e-commerce-api-v2.academlo.tech/api/v1/categories";
-
-  const [categories, getAllCategories] = useFetch(url);
+  const url = `${import.meta.env.VITE_API_URL}categories`;
+  const initFromTo = {
+    from: "",
+    to: "",
+  };
   const [categoryIsShow, setCategoryIsShow] = useState(true);
+  const [categories, getAllCategories] = useFetch(url);
 
   useEffect(() => {
     getAllCategories();
   }, []);
 
+  const resetFilterPrice = () => {
+    setFromTo(initFromTo);
+  };
+
   const handleClickCategories = (id) => {
-    const url = `https://e-commerce-api-v2.academlo.tech/api/v1/products?categoryId=${id}`;
+    const url = `${import.meta.env.VITE_API_URL}products?categoryId=${id}`;
+    resetFilterPrice();
     dispatch(getAllProductsThunk(url));
   };
 
   const handleClickAllProducts = () => {
+    resetFilterPrice();
     dispatch(getAllProductsThunk());
   };
 
@@ -43,7 +52,10 @@ const FilterCategory = () => {
 
       {categoryIsShow && (
         <ul className="category__list">
-          <li className="category__item-Products" onClick={handleClickAllProducts}>
+          <li
+            className="category__item-Products"
+            onClick={handleClickAllProducts}
+          >
             All Products
           </li>
           {categories?.map((category) => (

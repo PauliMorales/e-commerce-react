@@ -21,8 +21,8 @@ const Login = () => {
   }; //
 
   const handleLogin = async (e) => {
-    setLoading(true);
     e.preventDefault();
+    setLoading(true);
     const email = e.target.email.value;
     const password = e.target.password.value;
     const data = { email, password };
@@ -30,7 +30,7 @@ const Login = () => {
       const tokenResponse = await loginUser(data); //
       localStorage.setItem("token", tokenResponse?.data?.token);
       callback(true);
-    } catch {
+    } catch (error) {
       localStorage.removeItem("token");
     }
     setLoading(false);

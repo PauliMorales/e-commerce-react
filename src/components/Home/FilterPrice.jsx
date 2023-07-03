@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import  './styles/filterPrice.css'
-
+import "./styles/filterPrice.css";
 
 const FilterPrice = ({ setFromTo }) => {
   const { reset, register, handleSubmit } = useForm();
   const [filterShow, setFilterShow] = useState(true);
 
   const submit = (data) => {
+    console.log(data);
     setFromTo(data);
     reset({
       from: "",
@@ -53,9 +53,11 @@ const FilterPrice = ({ setFromTo }) => {
                 id="to"
               />
             </div>
+            <button type="submit" className="price_btn">
+              Filter Price
+            </button>
           </form>
         )}
-        <button className="price_btn">Filter Price</button>
       </article>
     </article>
   );

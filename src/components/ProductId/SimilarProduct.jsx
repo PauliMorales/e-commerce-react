@@ -4,7 +4,7 @@ import CardProduct from "../Home/CardProduct";
 import "./style/similarproducts.css";
 
 const SimilarProduct = ({ product }) => {
-  const url = `https://e-commerce-api-v2.academlo.tech/api/v1/products?categoryId=${product?.categoryId}`;
+  const url = `${import.meta.env.VITE_API_URL}products?categoryId=${product?.categoryId}`;
 
   const [filterProducts, getProductByCategory] = useFetch(url);
 

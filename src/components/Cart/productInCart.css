@@ -32,10 +32,18 @@
   background-color: var(--dark-color);
   color: white;
   transition: transform 200ms ease;
+  cursor: pointer;
+  box-shadow: 0 5px #999;
 }
 .prodcart__delete:hover {
   transform: scale(1.1);
   filter: brightness(1.15);
+  background-color: var(--main-color);
+}
+.prodcart__delete:active {
+  background-color: var(--main-color);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 .prodcart__footer {
   grid-column: span 3;

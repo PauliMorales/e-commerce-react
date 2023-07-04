@@ -1,8 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import "./style/header.css";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const navigate = useNavigate();
+  const { cartGlobal } = useSelector((state) => state);
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -28,8 +30,9 @@ const Header = () => {
               <i className="bx bx-shopping-bag header__icon"></i>
             </Link>
           </li>
-          <li className="header__items ">
+          <li className="header__items count__cart ">
             <Link to="/cart">
+              {cartGlobal && <span className="count__cart-span">{cartGlobal.length}</span>}
               <i className="bx bx-cart header__icon"></i>
             </Link>
           </li>

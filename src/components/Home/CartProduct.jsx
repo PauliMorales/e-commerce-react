@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import "./styles/cardproducts.css";
+import "./styles/cartproducts.css";
 import useCrudCart from "../../hooks/useCrudCart";
 
-const CardProduct = ({ product }) => {
+const CartProduct = ({ product }) => {
   const navigate = useNavigate();
   const { addProductToCart } = useCrudCart();
 
@@ -50,4 +50,4 @@ const CardProduct = ({ product }) => {
   );
 };
 
-export default CardProduct;
+export default CartProduct;

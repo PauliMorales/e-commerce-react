@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import CardProduct from "../components/Home/CardProduct";
+import CartProduct from "../components/Home/CartProduct";
 import { useRef, useState } from "react";
 import FilterCategory from "../components/Home/FilterCategory";
 import FilterPrice from "../components/Home/FilterPrice";
@@ -84,7 +84,7 @@ const Home = () => {
         </div>
         <div className="home_product">
           {productFilter?.map((prod) => (
-            <CardProduct key={prod.id} product={prod} />
+            <CartProduct key={prod.id} product={prod} />
           ))}
         </div>
       </div>

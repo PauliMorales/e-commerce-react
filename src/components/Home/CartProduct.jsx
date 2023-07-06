@@ -26,12 +26,12 @@ const CartProduct = ({ product }) => {
         <img
           className="product__img product__img-1"
           src={product?.productImgs[0]?.url}
-          alt=""
+          alt={product.title}
         />
         <img
           className="product__img product__img-2"
           src={product?.productImgs[1]?.url}
-          alt=""
+          alt={product.title}
         />
       </header>
       <div className="product__body">
